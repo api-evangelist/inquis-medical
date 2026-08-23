@@ -1,17 +1,50 @@
 aid: inquis-medical
 name: Inquis Medical
-description: 'Inquis Medical is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Inquis Medical is a privately funded medical device company founded in 2020
+  and headquartered at 1530 O''Brien Drive in Menlo Park, California, dedicated to advancing
+  the treatment of venous thromboembolic disease (VTE). Its flagship product, the AVENTUS
+  Precision Thrombectomy System, is a single-catheter mechanical thrombectomy platform that
+  combines a directional intelligent tip with an integrated 5F navigation catheter and dilator,
+  TrueClot proprietary tissue-sensing that gives the operator real-time feedback on what the
+  catheter tip is engaging (wall latch, lollipops, clogs), and in-line filtration with autologous
+  blood reinfusion that reduces blood loss without capital equipment. The AVENTUS Thrombectomy
+  System received FDA 510(k) clearance for peripheral indications and, in June 2025, for the
+  treatment of pulmonary embolism; the company also ships the AVENTUS Introducer Sheath and the
+  AVENTUS Clot Management System. Inquis raised a $40 million Series B in 2024 and a $75 million
+  Series C to scale commercial adoption. Inquis Medical is a clinical hardware company: it
+  publishes no public developer program, API documentation, SDK, or machine-readable API contract,
+  and its public GitHub organization holds a single empty embedded-firmware repository.'
 url: https://raw.githubusercontent.com/api-evangelist/inquis-medical/refs/heads/main/apis.yml
+image: https://inquismedical.com/wp-content/uploads/2025/10/Inquis-Medical-logo-reverse-rgb-e1760390408126.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
-specificationVersion: '0.20'
+x-tier: profile
+x-tier-reason: identity-enriched-no-api-surface
+specificationVersion: '0.23'
 created: '2026-08-23'
 modified: '2026-08-23'
 tags:
 - Company
+- Healthcare
+- Medical Devices
+- Thrombectomy
+- Interventional Radiology
+- Cardiovascular
+- Pulmonary Embolism
+- Catheters
+- Clinical Trials
+- Medical Hardware
+tags_raw:
+- Company
+- Health Care
+- Medical Devices
+- Thrombectomy
+- Interventional Radiology
+- Cardiovascular
+- Pulmonary Embolism
+- Catheters
+- Clinical Trials
+- Medical Hardware
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +52,71 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/inquis-medical-domain-security.yml
 - type: Website
+  url: https://inquismedical.com/
+- type: Blog
+  url: https://inquismedical.com/about-us/news/
+- type: BlogRSS
+  url: https://inquismedical.com/feed/
+- type: Support
+  url: https://inquismedical.com/contact-us/
+- type: TermsOfService
+  url: https://inquismedical.com/terms-and-conditions/
+- type: FAQ
+  url: https://inquismedical.com/faqs/
+- type: Careers
+  url: https://inquismedical.com/careers/
+- type: Patents
+  url: https://inquismedical.com/patents/
+- type: Technology
+  url: https://inquismedical.com/technology/
+- type: ClinicalEvidence
+  url: https://inquismedical.com/clinical-evidence/
+- type: GitHubOrganization
+  url: https://github.com/InquisMedical
+- type: LinkedIn
+  url: https://www.linkedin.com/company/inquis-medical/
+- type: Twitter
+  url: https://x.com/Inquismedical
+- type: YouTube
+  url: https://youtube.com/@inquis.medical
+- type: SecondaryMarket
   url: https://forgeglobal.com/inquis-medical_stock/
+- type: LLMsTxt
+  url: llms/inquis-medical-llms.txt
+x-enrichment:
+  date: '2026-08-23'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: Inquis Medical sells clinical hardware — the AVENTUS thrombectomy catheter system used
+    at the point of care — and ships no software product to integrate with; inquismedical.com is a
+    single WordPress marketing host with no api./developer./docs./dev./app./portal./partners.
+    subdomain in DNS (all NXDOMAIN), the whole /.well-known/ directory is answered by a 403 WAF
+    interstitial, and the only machine-readable JSON on the domain is the stock WordPress core REST
+    API at /wp-json/, which is the CMS and not an Inquis Medical product API.
+  evidence:
+  - url: https://inquismedical.com/openapi.json
+    status: 404
+  - url: https://inquismedical.com/swagger.json
+    status: 404
+  - url: https://inquismedical.com/graphql
+    status: 404
+  - url: https://inquismedical.com/llms.txt
+    status: 404
+  - url: https://inquismedical.com/.well-known/security.txt
+    status: 404
+  - url: https://inquismedical.com/.well-known/agent-card.json
+    status: 403
+  - url: https://inquismedical.com/.well-known/api-catalog
+    status: 403
+  - url: https://inquismedical.com/wp-json/
+    status: 200
+  - url: https://github.com/InquisMedical
+    status: 200
+  checked: '2026-08-23'

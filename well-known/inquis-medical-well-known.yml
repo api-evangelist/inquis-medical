@@ -1,0 +1,39 @@
+generated: '2026-08-23'
+method: probed
+source: live HTTPS probes of https://inquismedical.com/.well-known/*
+note: >-
+  Every /.well-known/ path was probed against the single host Inquis Medical operates
+  (inquismedical.com — no api., developer., docs., dev., app., portal. or partners.
+  subdomain resolves). Nothing is served. security.txt and llms.txt return a real nginx
+  404; openid-configuration returns the WordPress theme 404 page; the remaining paths
+  return a 403 WAF/ModSecurity HTML interstitial for the whole /.well-known/ directory,
+  which is a block, not a document. NO WellKnown, SecurityTxt or APICatalog pointer is
+  emitted in apis.yml because not one path returned a real document — this file records
+  a measured absence, not a presence.
+hosts:
+- host: inquismedical.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 403
+    file: null
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 403
+    file: null
+  - path: /.well-known/agent.json
+    status: 403
+    file: null
