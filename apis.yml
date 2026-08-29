@@ -15,6 +15,17 @@ description: 'Inquis Medical is a privately funded medical device company founde
   publishes no public developer program, API documentation, SDK, or machine-readable API contract,
   and its public GitHub organization holds a single empty embedded-firmware repository.'
 url: https://raw.githubusercontent.com/api-evangelist/inquis-medical/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://inquismedical.com/wp-content/uploads/2025/10/Inquis-Medical-logo-reverse-rgb-e1760390408126.png
 x-type: company
 x-source: harvest:secondary-market
